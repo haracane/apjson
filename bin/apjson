@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "json"
+require "awesome_print"
+require "pp"
+
+args = []
+
+while arg = ARGV.shift
+  case arg
+  when "--ap"
+    ap_flag = true
+  when "--inspect"
+    inspect_flag = true
+  when "--p"
+    p_flag = true
+  when "--pp"
+    pp_flag = true
+  when "--puts"
+    puts_flag = true
+  else
+    args.push arg
+  end
+end
+
+ARGV.push *args
+
+input = STDIN.read
+
+result = JSON.parse("#{input.gsub(/\r?\n/, "")}")
+
+ARGV.each do |key|
+  if result.is_a?(Array)
+    key = key.to_i
+  end
+  result = result[key]
+end
+
+result = result.inspect if inspect_flag
+
+if ap_flag
+  ap result
+elsif p_flag
+  p result
+elsif pp_flag
+  pp result
+elsif puts_flag
+  puts result
+else
+  ap result
+end

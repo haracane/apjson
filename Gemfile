@@ -5,6 +5,10 @@ source "http://rubygems.org"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
+
+gem "json"
+gem "awesome_print"
+
 group :development do
   gem "rspec", "~> 2.8.0"
   gem "rdoc", "~> 3.12"
