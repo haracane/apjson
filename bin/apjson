@@ -19,17 +19,21 @@ while arg = ARGV.shift
     pp_flag = true
   when "--puts"
     puts_flag = true
+  when "--puts"
+    puts_flag = true
+  when "-i"
+    input_file = ARGV.shift
+  when "--input"
+    input_file = ARGV.shift
   when "--help"
     puts <<-EOF
 usage: apjson [--p] [--pp] [--ap] [--puts]
-           [--input <path>] [--output <path>]
-           [--help] [<args>]
+           [--input <path>] [--help] [<args>]
   --p     print by p method
   --pp    print by pretty print
   --ap    print by awesome print
   --puts  print by puts method
   -i, --input FILE   read from FILE
-  -o, --output FILE  write to FILE
     EOF
     exit 0
   else
@@ -39,7 +43,21 @@ end
 
 ARGV.push *args
 
-input = STDIN.read
+if input_file
+  unless File.exists?(input_file)
+    STDERR.puts "ERROR: #{input_file} does not exist."
+    exit 1
+  end
+  f = open(input_file)
+  if f.nil?
+    STDERR.puts "ERROR: could not open #{input_file}"
+    exit 1
+  end  
+  input = f.read
+  f.close
+else
+  input = STDIN.read
+end
 
 result = JSON.parse("#{input.gsub(/\r?\n/, "")}")
 
