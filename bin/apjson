@@ -19,6 +19,19 @@ while arg = ARGV.shift
     pp_flag = true
   when "--puts"
     puts_flag = true
+  when "--help"
+    puts <<-EOF
+usage: apjson [--p] [--pp] [--ap] [--puts]
+           [--input <path>] [--output <path>]
+           [--help] [<args>]
+  --p     print by p method
+  --pp    print by pretty print
+  --ap    print by awesome print
+  --puts  print by puts method
+  -i, --input FILE   read from FILE
+  -o, --output FILE  write to FILE
+    EOF
+    exit 0
   else
     args.push arg
   end
