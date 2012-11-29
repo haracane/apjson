@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "apjson.gemspec",
     "bin/apjson",
     "lib/apjson.rb",
     "spec/apjson_spec.rb",
