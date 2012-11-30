@@ -28,7 +28,7 @@ while arg = ARGV.shift
   when "--help"
     puts <<-EOF
 usage: apjson [--p] [--pp] [--ap] [--puts]
-           [--input <path>] [--help] [<args>]
+           [--input FILE] [--help] [<args>]
   --p     print by p method
   --pp    print by pretty print
   --ap    print by awesome print
@@ -63,9 +63,14 @@ result = JSON.parse("#{input.gsub(/\r?\n/, "")}")
 
 ARGV.each do |key|
   if result.is_a?(Array)
+    if key !~ /-?[0-9]+/
+      STDERR.puts "ERROR: '#{key}' is not integer"
+      exit 1
+    end
     key = key.to_i
   end
   result = result[key]
+  break if result.nil?
 end
 
 result = result.inspect if inspect_flag

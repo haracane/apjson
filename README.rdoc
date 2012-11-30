@@ -1,6 +1,56 @@
 = apjson
 
-Description goes here.
+'apjson' print parsed json with your favorite format.
+
+== Supported Ruby versions and implementations
+apjson should work identically on:
+
+* Ruby 1.9.3+
+* Ruby 1.9.2+
+* Ruby 1.8.7+
+
+== Install
+
+You can install okuyama by gem.
+ gem install apjson
+ 
+== Usage
+
+Print json:
+ $ echo '[1,2,{"key":"val"}]' | apjson
+ [
+     [0] 1,
+     [1] 2,
+     [2] {
+         "key" => "val"
+     }
+ ]
+
+Read from file:
+ $ echo '[1,2,{"key":"val"}]' > sample.json
+ $ apjson -i sample.json
+ [
+     [0] 1,
+     [1] 2,
+     [2] {
+         "key" => "val"
+     }
+ ]
+ 
+Use p instead of awesome_print:
+ $ echo '[1,2,{"key":"val"}]' | apjson --p
+ [1, 2, {"key"=>"val"}]
+
+Trace json:
+ $ echo '[1,2,{"key":"val"}]' | apjson 0
+ 1
+ 
+Trace json more:
+ $ echo '[1,2,{"key":"val"}]' | apjson 2 key
+ "val"
+ 
+Read help:
+ $ apjson --help
 
 == Contributing to apjson
  
