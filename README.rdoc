@@ -11,7 +11,7 @@ apjson should work identically on:
 
 == Install
 
-You can install okuyama by gem.
+You can install apjson by gem.
  gem install apjson
  
 == Usage
