@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "apjson"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["haracane"]
-  s.date = "2012-11-30"
+  s.date = "2012-12-09"
   s.description = "print parsed json with your favorite format"
   s.email = "haracane@gmail.com"
   s.executables = ["apjson"]
@@ -28,7 +28,8 @@ Gem::Specification.new do |s|
     "apjson.gemspec",
     "bin/apjson",
     "lib/apjson.rb",
-    "spec/apjson_spec.rb",
+    "spec/bin/apjson_spec.rb",
+    "spec/lib/apjson_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/haracane/apjson"
