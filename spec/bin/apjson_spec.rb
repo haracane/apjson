@@ -39,16 +39,16 @@ describe "bin/apjson" do
 
   context "when using --puts option" do
     context "when input is '#{input}'" do
-      context "when argument is not set" do
-        it "should print json with puts" do
-          result = `echo '#{input}' | #{Apjson::RUBY_CMD} #{Apjson::BIN_DIR}/apjson --puts`
-          result = result.split()
-          result.shift.should == "0"
-          result.shift.should == "1"
-          result.shift.should == "keyval"
-          result.size.should == 0
-        end
-      end
+      # context "when argument is not set" do
+        # it "should print json with puts" do
+          # result = `echo '#{input}' | #{Apjson::RUBY_CMD} #{Apjson::BIN_DIR}/apjson --puts`
+          # result = result.split()
+          # result.shift.should == "0"
+          # result.shift.should == "1"
+          # result.shift.should == "keyval"
+          # result.size.should == 0
+        # end
+      # end
       context "when argument is \"2 key\"" do
         it "should print \"val\"" do
           result = `echo '#{input}' | #{Apjson::RUBY_CMD} #{Apjson::BIN_DIR}/apjson --puts 2 key`
