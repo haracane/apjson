@@ -14,5 +14,9 @@ group :development do
   gem "rdoc", "~> 3.12"
   gem "bundler"
   gem "jeweler", "~> 1.8.4"
-  gem "rcov", ">= 0"
+  if RUBY_VERSION <= '1.8.7'
+    gem "rcov", ">= 0"
+  else
+    gem "simplecov", ">= 0"
+  end
 end
