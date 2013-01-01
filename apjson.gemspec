@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "apjson"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["haracane"]
-  s.date = "2012-12-22"
+  s.date = "2013-01-01"
   s.description = "print parsed json with your favorite format"
   s.email = "haracane@gmail.com"
   s.executables = ["apjson"]
@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/haracane/apjson"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.21"
+  s.rubygems_version = "1.8.24"
   s.summary = "print parsed json with your favorite format"
 
   if s.respond_to? :specification_version then
@@ -44,28 +44,34 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<awesome_print>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 2.8.0"])
+      s.add_development_dependency(%q<rdoc>, [">= 3.12"])
+      s.add_development_dependency(%q<bundler>, [">= 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<ci_reporter>, [">= 1.7.0"])
+      s.add_development_dependency(%q<flog>, [">= 3.2.0"])
     else
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<awesome_print>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 2.8.0"])
+      s.add_dependency(%q<rdoc>, [">= 3.12"])
+      s.add_dependency(%q<bundler>, [">= 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<ci_reporter>, [">= 1.7.0"])
+      s.add_dependency(%q<flog>, [">= 3.2.0"])
     end
   else
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<awesome_print>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 2.8.0"])
+    s.add_dependency(%q<rdoc>, [">= 3.12"])
+    s.add_dependency(%q<bundler>, [">= 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<ci_reporter>, [">= 1.7.0"])
+    s.add_dependency(%q<flog>, [">= 3.2.0"])
   end
 end
 
